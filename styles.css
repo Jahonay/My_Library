@@ -1,0 +1,8 @@
+*{
+    font-family: "montserrat", "sans-serif";
+}
+
+.row{
+    height:33.3333333vh;
+    border:1px solid lightslategray;
+}
