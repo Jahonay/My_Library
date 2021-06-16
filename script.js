@@ -48,6 +48,14 @@ function removeBook(e){
     libraryFeed(myLibrary);
 }
 
+function editBook(e){
+    var title = document.getElementById("input-title");
+    var author = document.getElementById("input-author");
+    e.target.parentNode.firstChild.innerHtml=title;
+
+    e.target.parentNode.secondChild.innerHtml=author;
+}
+
 function newBookElement(book){
 
     this.element = document.createElement("div");
@@ -60,11 +68,54 @@ function newBookElement(book){
     this.h1.textContent=book.title;
     this.p = document.createElement("p");
     this.p.textContent=book.author;
+
+    // hidden input
+    /*
+
+        very hidden input now
+
+    this.inputTitle =document.createElement("input");
+    this.inputTitle.id = "input-title";
+    this.inputAuthor =document.createElement("input");
+    this.inputAuthor.id = "input-author";
+    this.inputTitle.setAttribute("style", 'display:none;');
+    this.inputAuthor.setAttribute("style", 'display:none;');
+    this.inputTitle.setAttribute("placeholder", "title");
+    this.inputAuthor.setAttribute("placeholder", "author");
+    this.buttonInput=document.createElement("button");
+    this.buttonInput.setAttribute("style", "display:none;");
+    this.buttonInput.classList.add("btn-primary");
+    this.buttonInput.onClick = editBook;
+    */
+
+    //  Edit button, started with delete button
+    //  so I'm gonna attempt to do the same thing
+
     this.button1 = document.createElement("button");
     this.button1.textContent = "edit ";
     this.button1.id="edit";
+    // new
+    this.button1.onClick = editBook;
+    this.button1.setAttribute("onclick", 'editBook');
+    /*
+    this.button1.addEventListener("click", function() {
+        this.inputTitle.setAttribute("style", 'display:flex;');
+        this.inputAuthor.setAttribute("style", 'display:flex;');
+        this.buttonInput=document.setAttribute("style", "display:none;");
+
+      });
+
+    */
+    /*
+        Delete button was a pain in my rear end, but
+        i learned a lot through the process. The eventual
+        solve was by adding an onclick event to each button
+        as they're constructed, and then you use the onclick
+        event as a pointer to then reference it's parent node's 
+        parents node to delete it from the page. 
 
 
+    */
     this.button = document.createElement("button");
     this.button.textContent = "delete";
     this.button.classList.add('btn-primary');
@@ -78,6 +129,11 @@ function newBookElement(book){
     this.element.appendChild(this.p);
     this.element.appendChild(this.button1);
     this.element.appendChild(this.button);
+
+    this.element.appendChild(this.inputTitle);
+    this.element.appendChild(this.inputAuthor);
+    this.element.appendChild(this.buttonInput);
+    
 
    // document.getElementById("delete").addEventListener("click", removeBook);
 
