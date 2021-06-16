@@ -5,6 +5,7 @@
 
 let myLibrary = [];
 var rowOne = document.getElementById("row-one");
+var hiddenform= document.querySelector(".hidden-form");
 
 function Book(author, title) {
     this.author=author;
@@ -20,14 +21,29 @@ function printLibrary(){
         console.log(myLibrary[i]);
     }
 }
+function showForm(){
+    hiddenform.setAttribute("style", "display:flex");
+}
+function createBook(){
+    var author=document.getElementById("book-author").value;
+    var title=document.getElementById("book-title").value;
+
+    this.Book = new Book(author, title);
+    addBookToLibrary(this.Book);
+    libraryFeed(myLibrary);
+    
+    
+}
 
 const bio = new Book("john","2 kids and a regret");
 addBookToLibrary(bio);
 printLibrary();
 
 function newBookElement(book){
+
     this.element = document.createElement("div");
     this.element.classList.add('container');
+    this.element.id= "book";
     rowOne.appendChild(this.element);
 
 
@@ -47,8 +63,14 @@ function newBookElement(book){
     this.element.appendChild(this.button1);
     this.element.appendChild(this.button);
 }
-var biopage = new newBookElement(bio);
 
+function libraryFeed(myLibrary){
+    for(i=0;i<myLibrary.length; i++){
+        this.book = new newBookElement(myLibrary[i]);
+    }
+}
+
+libraryFeed(myLibrary);
 
 
 /*

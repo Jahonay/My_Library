@@ -2,30 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="To do list">
+    <meta name="description" content="Adding some books to a list">
     <meta name="keywords" content="html, css, practice, clone">
     <meta name="author" content="John Mackey">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do list</title>
+    <title>Book list!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel='stylesheet' href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <!--<link rel="shortcut icon" type="image/png" href="favicon.png">
     -->
 </head>
 <body>
+<div class="container" id ="heading">
+    <h1 class="title">My Library</h1>
+    <p class="site-desc">Store your library of books for later reference
+                        this way you come back and remember which stories
+                        you've travelled through. Also you can recommend them!</p>
+    <button class="btn-primary" onClick=showForm()>+</button>
+    <div class="hidden-form">
+    <input type="text" id="book-title" class="book-inputs" placeholder="Book Title"></input>
+    <input type="text" id="book-author" class="book-inputs" placeholder="Book Author"></input>
+    <button class="btn-primary" onClick=createBook().preventDefault()>Create</button>
+    </div>
+</div>
 <div class="container" >
   <div class="row" id="row-one">
   </div>
 </div>
-<div class="container">
-  <div class="row">
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-  <h1>hello</h1>
-  </div>
+
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -3,6 +3,33 @@
 }
 
 .row{
-    height:33.3333333vh;
-    border:1px solid lightslategray;
+    height:100%;
+    z-index: 0;
+}
+
+#book{
+    width:48%;
+    padding: 2em 1em 4em 1em;
+    background-color: aliceblue;
+    border-radius: 8px;
+    margin:10px auto;
+}
+h1{
+    color:#007bff;
+}
+.title{
+    text-align: left;
+}
+p{
+    font-weight: 400;
+}
+.hidden-form{
+    display:none;
+    flex-direction: column;
+    position: relative;
+    width:fit-content;
+    height:fit-content;
+    padding:1em 2em 3em 2em;
+    z-index: 10000;
+    background-color: aliceblue;
 }
