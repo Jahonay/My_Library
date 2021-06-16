@@ -25,19 +25,28 @@ function showForm(){
     hiddenform.setAttribute("style", "display:flex");
 }
 function createBook(){
-    var author=document.getElementById("book-author").value;
-    var title=document.getElementById("book-title").value;
-
-    this.Book = new Book(author, title);
-    addBookToLibrary(this.Book);
-    libraryFeed(myLibrary);
-    
+    addBookToLibrary(newBook());
+    libraryFeed(myLibrary.slice(-1));
     
 }
 
-const bio = new Book("john","2 kids and a regret");
-addBookToLibrary(bio);
-printLibrary();
+function newBook(){
+    author=document.getElementById("book-author").value;
+    title=document.getElementById("book-title").value;
+
+    return new Book(author, title);
+}
+
+
+function removeBook(e){
+     bookTitle = e.target.parentNode.firstChild.innerHtml;
+    myLibrary=myLibrary.filter((Book)=> book.title !== bookTitle);
+    e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+
+    //need to get book title when called
+
+    libraryFeed(myLibrary);
+}
 
 function newBookElement(book){
 
@@ -53,15 +62,25 @@ function newBookElement(book){
     this.p.textContent=book.author;
     this.button1 = document.createElement("button");
     this.button1.textContent = "edit ";
+    this.button1.id="edit";
+
+
     this.button = document.createElement("button");
     this.button.textContent = "delete";
     this.button.classList.add('btn-primary');
-    this.button1.classList.add('btn-primary')
+    this.button.id="delete";
+    this.button.setAttribute("onclick", 'removeBook');
+    this.button.onclick = removeBook;
+
+    this.button1.classList.add('btn-primary');
     this.button.setAttribute('type', 'button');
     this.element.appendChild(this.h1);
     this.element.appendChild(this.p);
     this.element.appendChild(this.button1);
     this.element.appendChild(this.button);
+
+   // document.getElementById("delete").addEventListener("click", removeBook);
+
 }
 
 function libraryFeed(myLibrary){
