@@ -49,11 +49,14 @@ function removeBook(e){
 }
 
 function editBook(e){
+    /*
     var title = document.getElementById("input-title");
     var author = document.getElementById("input-author");
-    e.target.parentNode.firstChild.innerHtml=title;
-
-    e.target.parentNode.secondChild.innerHtml=author;
+    */
+    var title = prompt("new title", "harry Potter");
+    var author = prompt("new Author", "Not Jk");
+    e.target.parentNode.firstChild.textContent=title;
+    e.target.parentNode.children[1].textContent=author;
 }
 
 function newBookElement(book){
@@ -95,8 +98,8 @@ function newBookElement(book){
     this.button1.textContent = "edit ";
     this.button1.id="edit";
     // new
-    this.button1.onClick = editBook;
-    this.button1.setAttribute("onclick", 'editBook');
+    this.button1.setAttribute("onclick", 'editBook();');
+    this.button1.onclick = editBook;
     /*
     this.button1.addEventListener("click", function() {
         this.inputTitle.setAttribute("style", 'display:flex;');
@@ -120,7 +123,7 @@ function newBookElement(book){
     this.button.textContent = "delete";
     this.button.classList.add('btn-primary');
     this.button.id="delete";
-    this.button.setAttribute("onclick", 'removeBook');
+    this.button.setAttribute("onclick", 'removeBook();');
     this.button.onclick = removeBook;
 
     this.button1.classList.add('btn-primary');
@@ -129,11 +132,11 @@ function newBookElement(book){
     this.element.appendChild(this.p);
     this.element.appendChild(this.button1);
     this.element.appendChild(this.button);
-
+      /*
     this.element.appendChild(this.inputTitle);
     this.element.appendChild(this.inputAuthor);
     this.element.appendChild(this.buttonInput);
-    
+    */
 
    // document.getElementById("delete").addEventListener("click", removeBook);
 

@@ -20,7 +20,7 @@
     <p class="site-desc">Store your library of books for later reference
                         this way you can come back and remember which stories
                         you've told. Also you can recommend them to others!</p>
-    <button class="btn-primary" onClick=showForm()>+</button>
+    <button id="plusbtn" class="btn-primary" onClick=showForm()>+</button>
     <div class="hidden-form">
     <input type="text" id="book-title" class="book-inputs" placeholder="Book Title"></input>
     <input type="text" id="book-author" class="book-inputs" placeholder="Book Author"></input>
@@ -34,6 +34,25 @@
 
 </div>
 </body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAK8MK2QFnxM65QOYN2V87c3Je-aiHfYPg",
+    authDomain: "mylibrary-fbf00.firebaseapp.com",
+    projectId: "mylibrary-fbf00",
+    storageBucket: "mylibrary-fbf00.appspot.com",
+    messagingSenderId: "27625992302",
+    appId: "1:27625992302:web:4e271ffc81a7ab6c79367f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
