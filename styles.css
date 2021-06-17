@@ -17,6 +17,9 @@
 h1{
     color:#007bff;
 }
+.site-desc{
+    padding: 1em 0 1em 0;
+}
 .title{
     text-align: left;
 }
@@ -32,6 +35,28 @@ p{
     padding:1em 2em 3em 2em;
     z-index: 10000;
     background-color: aliceblue;
+}
+
+#header{
+    background-color: #007bff;
+    color:white !important;
+    margin-bottom:1rem;
+    padding-top:1rem;
+}
+
+#header h1{
+    color:white;
+    padding-left:1rem;
+    margin-right:auto;
+}
+
+#header button{
+    margin: auto 1rem auto auto;
+    background-color: aliceblue;
+    color:#007bff;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    height: 90%;
 }
 
 #plusbtn{

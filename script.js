@@ -22,8 +22,23 @@ function printLibrary(){
     }
 }
 function showForm(){
-    hiddenform.setAttribute("style", "display:flex");
+    var fo = document.querySelector(".hidden-form");
+    if(fo.style.display === "none"){
+        hiddenform.setAttribute("style", "display:flex");
+    }
+    else{
+        hiddenform.setAttribute("style", "display:none");
+    }
 }
+
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
 function createBook(){
     addBookToLibrary(newBook());
     libraryFeed(myLibrary.slice(-1));
