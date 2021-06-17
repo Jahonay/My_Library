@@ -3,6 +3,8 @@
         |--| |  Thanks Odin Project!
         |  | |
 #############################################
+this file is hosted on netlify
+https://mylibrarylist.netlify.app/
 
 1. Intro
 
